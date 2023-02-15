@@ -1,8 +1,9 @@
 from abc import ABC
 from datetime import datetime, timedelta
+from objects.serviceable import Serviceable
 
 
-class Battery(ABC):
+class Battery(Serviceable, ABC):
     """Abstract class for a battery"""
 
     def __init__(self, last_service_date, service_interval):

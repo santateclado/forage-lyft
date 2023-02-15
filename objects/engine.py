@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
+from objects.serviceable import Serviceable
 
 
-class Engine(ABC):
+class Engine(Serviceable, ABC):
     """Abstract class for an engine"""
 
     @abstractmethod
