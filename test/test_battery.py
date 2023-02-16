@@ -38,10 +38,16 @@ class TestSpindlerBattery(unittest.testCase):
             today - timedelta(days=(365 * 2)))
         battery6 = spindler_battery.SpindlerBattery(
             today - timedelta(days=((365 * 2) + 150)))
+        battery7 = spindler_battery.SpindlerBattery(
+            today - timedelta(days=365 * 3))
+        battery8 = spindler_battery.SpindlerBattery(
+            today - timedelta(days=1279))
 
         self.assertFalse(battery1.needs_service())
         self.assertFalse(battery2.needs_service())
         self.assertFalse(battery3.needs_service())
         self.assertFalse(battery4.needs_service())
-        self.assertTrue(battery5.needs_service())
-        self.assertTrue(battery6.needs_service())
+        self.assertFalse(battery5.needs_service())
+        self.assertFalse(battery6.needs_service())
+        self.assertTrue(battery7.needs_service())
+        self.assertTrue(battery8.needs_service())
